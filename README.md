@@ -53,6 +53,6 @@ _Add 1–2 screenshots of the homepage and projects section here once deployed._
 
 ## 👤 Author
 
-- **Your Name** – Java / Web Developer  
-- LinkedIn: _https://www.linkedin.com/in/your-profile_  
-- GitHub: _https://github.com/your-username_
+- **Nanda Kishor** – Java / Web Developer  
+- LinkedIn: _https://www.linkedin.com/in/nanda24  
+- GitHub: _https://github.com/nandakishor200324-lab
