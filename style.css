@@ -1,0 +1,444 @@
+/* ===== Reset & Global ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+#app {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1.5rem 1.25rem 3rem;
+}
+
+
+body {
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  color: #f5f5ff;
+  background:
+    linear-gradient(to bottom, #1a0f3f, #2b1056 45%, #43125f 75%, #4b1c73 100%);
+  min-height: 100vh;
+}
+
+/* subtle plus (+) grid overlay */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 32px 32px;
+  pointer-events: none;
+  mix-blend-mode: soft-light;
+  z-index: -1;
+}
+
+
+/* Layout helpers */
+#app {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1.5rem 1.25rem 3rem;
+}
+
+/* ===== Navbar ===== */
+#navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(12px);
+  background: rgba(10, 6, 24, 0.8);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 0.5rem;
+}
+
+
+.nav-logo a {
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.25rem;
+  font-size: 0.95rem;
+}
+
+.nav-links a {
+  color: #e0ddff;
+  text-decoration: none;
+  position: relative;
+  padding-bottom: 0.15rem;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background: #7c5cff;
+  transition: width 0.25s ease;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+  width: 100%;
+}
+
+/* ===== Sections spacing ===== */
+section {
+  padding: 4rem 0 3.5rem;    /* top / left-right / bottom */
+}
+/* ===== Responsive (tablets & mobiles) ===== */
+@media (max-width: 768px) {
+  #app {
+    padding-inline: 1rem;
+  }
+
+  .hero-inner {
+    grid-template-columns: 1fr;   /* stack hero columns */
+    gap: 2.5rem;
+  }
+
+  .hero-right {
+    order: -1;  /* optional: code window above text on mobile */
+  }
+
+  section {
+    padding: 3rem 0 2.5rem;       /* slightly less padding on small screens */
+  }
+}
+
+
+.section-header {
+  margin-bottom: 2rem;
+}
+
+.section-header h2 {
+  font-size: 1.6rem;
+  margin-bottom: 0.4rem;
+}
+
+.section-header p {
+  font-size: 0.95rem;
+  color: #c5c3f5;
+}
+
+/* ===== Hero ===== */
+#hero {
+  padding-top: 3.5rem;
+}
+
+.hero-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 1.1fr);
+  gap: 3rem;
+  align-items: center;
+}
+
+
+.hero-greeting {
+  font-size: 0.9rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #c5c3f5;
+  margin-bottom: 0.5rem;
+}
+
+.hero-name {
+  font-size: 2.3rem;
+  margin-bottom: 0.3rem;
+}
+
+.hero-role {
+  font-size: 1.2rem;
+  color: #a9a5ff;
+  margin-bottom: 1rem;
+}
+
+.hero-description {
+  font-size: 0.98rem;
+  color: #d7d5ff;
+  line-height: 1.7;
+  max-width: 34rem;
+  margin-bottom: 1.5rem;
+}
+
+/* glass + glow button */
+.btn-glass {
+  border: 1px solid rgba(255,255,255,0.35);
+  background: rgba(255,255,255,0.06);
+  color: #ffffff;
+  padding: 0.7rem 1.6rem;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  backdrop-filter: blur(18px);
+  box-shadow: 0 0 0px rgba(0,0,0,0.25), 0 0 18px rgba(124,92,255,0.45);
+  transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+}
+
+.btn-glass:hover {
+  transform: translateY(-1px) scale(1.02);
+  background: rgba(255,255,255,0.12);
+  box-shadow: 0 0 25px rgba(124,92,255,0.75);
+}
+
+/* Hero right code window */
+.code-window {
+  border-radius: 1rem;
+  overflow: hidden;
+  background: radial-gradient(circle at top left, #3f2b96, #1b1538);
+  box-shadow: 0 22px 45px rgba(3, 0, 30, 0.6);
+}
+
+.code-window-header {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.4rem 0.7rem;
+  background: linear-gradient(to right, #221535, #2b1844);
+}
+
+.code-window-header .dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.code-window-header .red { background: #ff5f57; }
+.code-window-header .yellow { background: #febc2e; }
+.code-window-header .green { background: #28c840; }
+
+.code-window-body {
+  padding: 1rem 1.2rem;
+  font-family: "Fira Code", "Consolas", "SFMono-Regular", Menlo, Monaco, monospace;
+  font-size: 0.82rem;
+  line-height: 1.6;
+  color: #e4e3ff;
+  background: linear-gradient(145deg, #151026, #21163d);
+}
+
+/* Projects / cards grid */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Experience timeline (basic visual placeholder) */
+.timeline {
+  border-left: 2px solid rgba(255,255,255,0.18);
+  padding-left: 1.6rem;
+  display: grid;
+  gap: 1.6rem;
+}
+
+.timeline-item {
+  position: relative;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: -1.05rem;
+  top: 0.35rem;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: #7c5cff;
+  box-shadow: 0 0 0 4px rgba(124,92,255,0.25);
+}
+
+.timeline-content {
+  background: rgba(10, 6, 40, 0.8);
+  border-radius: 0.9rem;
+  padding: 0.85rem 1rem;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.timeline-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.25rem;
+  font-size: 0.8rem;
+}
+
+.timeline-badge {
+  padding: 0.1rem 0.45rem;
+  border-radius: 999px;
+  background: rgba(124,92,255,0.18);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.72rem;
+}
+
+.timeline-period {
+  color: #c5c3f5;
+}
+
+.timeline-title {
+  font-size: 1rem;
+  margin: 0.15rem 0;
+}
+
+.timeline-org {
+  font-size: 0.85rem;
+  color: #c5c3f5;
+  margin-bottom: 0.35rem;
+}
+
+.timeline-details {
+  padding-left: 1.1rem;
+  font-size: 0.85rem;
+  color: #dedcff;
+  display: grid;
+  gap: 0.15rem;
+}
+
+
+/* Skills grid */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1.25rem;
+}
+
+/* Contact */
+.contact-content {
+  display: grid;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+}
+
+/* Footer */
+#footer {
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding-top: 1.5rem;
+  font-size: 0.85rem;
+  color: #c5c3f5;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  #app {
+    padding-inline: 1rem;
+  }
+
+  .hero-inner {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .hero-right {
+    order: -1;
+  }
+
+  .nav-links {
+    gap: 0.75rem;
+    font-size: 0.85rem;
+  }
+
+  section {
+    padding: 3rem 0 2.5rem;
+  }
+}
+/* Project cards */
+.project-card {
+  background: rgba(10, 6, 40, 0.85);
+  border-radius: 1rem;
+  padding: 1rem 1.1rem 1.2rem;
+}
+
+/* 1. Fix common thumbnail size */
+.project-thumb {
+  width: 100%;
+  height: 220px;              /* set the same height for all */
+  border-radius: 0.75rem;
+  overflow: hidden;
+  margin-bottom: 0.75rem;
+}
+
+/* 2. Make image fill the box and crop neatly */
+.project-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;          /* keeps aspect ratio, crops extra */
+  display: block;
+}
+
+/* Skills grid */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1rem;
+}
+
+.skill-pill {
+  border-radius: 999px;
+  padding: 0.55rem 0.9rem;
+  background: rgba(10, 6, 40, 0.7);
+  border: 1px solid rgba(255,255,255,0.12);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.4rem;
+  font-size: 0.85rem;
+  color: #e7e5ff;
+}
+
+.skill-tag {
+  font-size: 0.72rem;
+  padding: 0.18rem 0.5rem;
+  border-radius: 999px;
+  background: rgba(124, 92, 255, 0.18);
+  color: #cfcaff;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.contact-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  padding: 0.6rem 0.8rem;
+  border-radius: 0.7rem;
+  background: rgba(10, 6, 40, 0.8);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.contact-label {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #c5c3f5;
+}
+
+.contact-item a {
+  font-size: 0.92rem;
+  color: #ffffff;
+  text-decoration: none;
+  word-break: break-all;
+}
+
+.contact-item a:hover {
+  text-decoration: underline;
+}
+

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Portfolio</title>
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- Loader -->
+  <div id="loader">
+    <div class="loader-spinner"></div>
+    <p>Loading portfolio...</p>
+  </div>
+
+  <!-- Page Wrapper -->
+  <div id="app">
+
+    <!-- Navbar -->
+    <header id="navbar">
+      <nav class="nav-container">
+        <div class="nav-logo">
+          <!-- Your name or logo -->
+          <a href="#hero">MAVILLAPALLE NANDA KISHOR</a>
+        </div>
+        <ul class="nav-links">
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+
+      <!-- Hero Section -->
+      <section id="hero">
+        <div class="hero-inner">
+          <!-- Left: Text -->
+          <div class="hero-left">
+            <p class="hero-greeting">Hi, I'm</p>
+            <h1 class="hero-name">Nanda Kishor</h1>
+            <h2 class="hero-role">
+              <span id="typing-role"></span>
+            </h2>
+            <p class="hero-description">
+              A driven and diligent Electronics & Communication Engineering graduate with a strong foundation in programming and
+analytical thinking. Recognized for being proactive, a quick learner, and a collaborative team player. Seeking a position where
+I can leverage my technical skills, gain real-world experience, and contribute to organizational growth.
+            </p>
+            
+              <a
+  href="B:\My-Portfolio\Nanda kishor 24.pdf"
+  class="btn-glass"
+  target="_blank"
+  rel="noopener"
+>
+  Download Resume
+</a>
+
+
+          </div>
+
+          <!-- Right: Code editor look -->
+          <div class="hero-right">
+            <div class="code-window">
+              <div class="code-window-header">
+                <span class="dot red"></span>
+                <span class="dot yellow"></span>
+                <span class="dot green"></span>
+              </div>
+              <div class="code-window-body">
+                <pre><code>
+// Example: portfolio data preview
+const name = "Nanda Kishor";
+const role = "Full Stack Java Developer";
+const location = "Bengaluru, India";
+                </code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Projects Section -->
+      <section id="projects">
+        <div class="section-header">
+          <h2>Projects</h2>
+          <p>Some of the work and experiments done so far.</p>
+        </div>
+        <div id="projects-list" class="cards-grid">
+          <!-- Project cards will be injected here by main.js -->
+        </div>
+      </section>
+
+      <!-- Experience Section -->
+      <section id="experience">
+        <div class="section-header">
+          <h2>Experience & Education</h2>
+          <p>A timeline of where you studied and worked.</p>
+        </div>
+        <div id="experience-timeline" class="timeline">
+          <!-- Experience items will be injected here by main.js -->
+        </div>
+      </section>
+
+      <!-- Skills Section -->
+      <section id="skills">
+        <div class="section-header">
+          <h2>Skills</h2>
+          <p>Technologies and tools used regularly.</p>
+        </div>
+        <div id="skills-grid" class="skills-grid">
+          <!-- Skill icons will be injected here by main.js -->
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section id="contact">
+        <div class="section-header">
+          <h2>Contact</h2>
+          <p>Feel free to reach out for opportunities or collaboration.</p>
+        </div>
+        <div id="contact-content" class="contact-content">
+          <!-- Contact info will be injected here by main.js -->
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer">
+      <p>© 2025 Nanda Kishor. All rights reserved.</p>
+    </footer>
+
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/constants.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
